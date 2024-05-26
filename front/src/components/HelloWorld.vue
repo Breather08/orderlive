@@ -8,10 +8,15 @@ const promptResponse = ref("");
 
 const fetchCategories = debounce(async () => {
   console.log("debounce");
-  const response = await axios.get(
-    `https://192.168.0.113:7120/api/Search?question=${promptModel.value}`
-  );
-  promptResponse.value = response.data.choices[0].message.content;
+  try {
+    const response = await axios.get(
+      `https://192.168.0.113:7120/api/Search?question=${promptModel.value}`
+    );
+    alert(response);
+    promptResponse.value = response.data.choices[0].message.content;
+  } catch (e) {
+    promptResponse.value = JSON.stringify(e);
+  }
 }, 1000);
 
 watch(
