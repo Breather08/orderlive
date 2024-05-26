@@ -9,10 +9,10 @@ const promptResponse = ref("");
 const fetchCategories = debounce(async () => {
   console.log("debounce");
   const response = await axios.get(
-    "https://192.168.0.113:7120/api/Search?question=mechanic"
+    `https://192.168.0.113:7120/api/Search?question=${promptModel.value}`
   );
   promptResponse.value = response.data.choices[0].message.content;
-}, 500);
+}, 1000);
 
 watch(
   () => promptModel.value,
