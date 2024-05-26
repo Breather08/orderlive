@@ -1,34 +1,37 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import axios from "axios";
+import { ref, watch } from "vue";
+import debounce from "../utils/debounce";
 
-defineProps<{ msg: string }>()
+const promptModel = ref("");
+const promptResponse = ref("");
 
-const count = ref(0)
+const fetchCategories = debounce(async () => {
+  console.log("debounce");
+  try {
+    const response = await axios.get(
+      `https://192.168.0.113:7120/api/Search?question=${promptModel.value}`
+    );
+    alert(response);
+    promptResponse.value = response.data.choices[0].message.content;
+  } catch (e) {
+    promptResponse.value = JSON.stringify(e);
+  }
+}, 1000);
+
+watch(
+  () => promptModel.value,
+  () => {
+    fetchCategories();
+  }
+);
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
-  </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <input v-model="promptModel" type="text" />
+  <pre>
+    {{ promptResponse }}
+  </pre>
 </template>
 
 <style scoped>
