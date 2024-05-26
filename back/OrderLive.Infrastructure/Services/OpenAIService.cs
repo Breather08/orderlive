@@ -25,7 +25,7 @@ namespace OrderLive.Infrastructure.Services
                     new MessageRequest
                     {
                         Role = "system",
-                        Content = "Ты виртуальная гадалка на картах Таро, раскажи"
+                        Content = "I want you to make all next responses as list of tokens of category, that the prompt may relate to.\r\nFor example the prompt says: \"my car is broken\", I expect that you can build up a list of categories of people that might be helpful out of this prompt such as: \"Mechanic\", \"Auto Electrician\", \"Automotive Technician\" \r\nDescribe the answer in the language it was prompted"
                     },
                     new MessageRequest
                     {
