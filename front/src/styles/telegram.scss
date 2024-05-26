@@ -1,0 +1,78 @@
+button {
+  font-size: 16px;
+  color: var(--tg-theme-button-text-color);
+  background-color: var(--tg-theme-button-color);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+input {
+  background-color: var(--tg-theme-secondary-bg-color);
+  border-radius: 12px;
+}
+
+.bg-main {
+  background-color: var(--tg-theme-bg-color);
+}
+
+.bg-secondary {
+  background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.bg-action-primary {
+  background-color: var(--tg-theme-button-color);
+}
+
+.bg-section {
+  background-color: var(--tg-theme-section-bg-color);
+}
+
+.bg-header {
+  background-color: var(--tg-theme-header-bg-color);
+}
+
+.text-main {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--tg-theme-text-color);
+}
+
+.text-action-primary {
+  color: var(--tg-theme-button-color);
+}
+
+.text-section-header {
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--tg-theme-section-header-text-color);
+}
+
+.text-subtitle {
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--tg-theme-subtitle-text-color);
+}
+
+.text-accent {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tg-theme-accent-text-color);
+}
+
+.text-link {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tg-theme-link-color);
+}
+
+.text-hint {
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--tg-theme-hint-color);
+}
+
+.text-destructive {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--tg-theme-destructive-text-color);
+}
