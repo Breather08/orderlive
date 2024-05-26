@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/vue": "^4.1.0",
-    "astro": "^4.7.1",
     "vue": "^3.4.27"
   },
   "devDependencies": {
