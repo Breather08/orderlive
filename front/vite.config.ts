@@ -6,7 +6,7 @@ const options: UserConfig = {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/styles/mock.variables.scss";'
+        // additionalData: '@import "@/styles/mock.variables.scss";'
       }
     }
   },
