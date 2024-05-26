@@ -7,7 +7,6 @@ const promptModel = ref("");
 const promptResponse = ref("");
 
 const fetchCategories = debounce(async () => {
-  console.log("debounce");
   try {
     const response = await axios.get(
       `https://192.168.0.113:7120/api/Search?question=${promptModel.value}`
@@ -29,7 +28,7 @@ watch(
 
 <template>
   <input v-model="promptModel" type="text" />
-  <pre>
+  <pre style="width: 100vw;">
     {{ promptResponse }}
   </pre>
 </template>
